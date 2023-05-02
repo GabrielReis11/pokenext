@@ -1,7 +1,13 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import pokeball from '~/asserts/imgs/pokeball-hd.png'
 
 const Header = () => {
+    const [todo, setTodo] = useState(0)
+
+    useEffect(() => {}, [])
+
     return (
         <header
             className="
@@ -13,11 +19,13 @@ const Header = () => {
                 gap-2
             "
         >
+            <Link href='/' className='flex justify-center items-center'>
             <Image src={pokeball} width={50} height={50} alt='Logo Pokeball' className="ml-8" />
 
             <h2 className="text-base font-bold text-center text-white font-mono">
-                PokeNext Estácio!
+                Pokemons
             </h2>
+            </Link>
         </header>
     )
 }
